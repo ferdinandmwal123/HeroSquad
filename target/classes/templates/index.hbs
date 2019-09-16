@@ -1,0 +1,18 @@
+{{#partial "content"}}
+    <h1>Good</h1>
+    {{#if heroes}}
+        {{#each heroes }}
+            <div class="list-group">
+                <p><a href="/squads/{{squad_id}}/heroes/{{id}}" class="list-group-item list-group-item-action active">{{hero_name}} <span class="badge">Enter to view herro :)</span></a></p>
+                <p class="list-group-item list-group-item-action">{{hero_name}}</p>
+                <p class="list-group-item list-group-item-action">{{hero_name}}</p>
+
+            </div>
+
+
+        {{/each}}
+    {{else}}
+        <p>No tasks!</p>
+    {{/if}}
+{{/partial}}
+{{>layout.hbs}}

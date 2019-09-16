@@ -6,12 +6,10 @@ import models.Squad;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import static spark.Spark.*;
 
 
@@ -26,8 +24,8 @@ public class App{
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
-        String connectionString = "jdbc:h2:~/herosquad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
+        String connectionString = "jdbc:postgresql://ec2-107-20-185-16.compute-1.amazonaws.com:5432/ddh2h1s2jknmdr";
+        Sql2o sql2o = new Sql2o(connectionString, "piqqgubzyleqio", "ffc0ffc5aae6ec40329b63175d79c2bfd6f67d097901e723232ae342f06b125a");
         Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
         Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
 

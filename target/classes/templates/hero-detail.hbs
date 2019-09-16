@@ -1,0 +1,16 @@
+{{#partial "content"}}
+    <div class="container">
+  <ul class="list-group">
+      <p class="herodetail list-group-item"> Your hero name : {{ hero.hero_name}}</p>
+      <p class="herodetail list-group-item">Your hero power {{ hero.hero_power}} 💪💪💪💪💪</p>
+      <p class="herodetail list-group-item">Weakness : {{ hero.hero_weakness}} 😓😓😓😓</p>
+      <p class="list-group-item"><span class="badge">Good choice! I like {{ hero.hero_name}}</span></p>
+  </ul>
+
+        <a href="/heroes/{{hero.id}}/edit">Edit Hero</a><br>
+        <a href="/squads/{{hero.squad_id}}/heroes/{{hero.id}}/delete">DELETE this hero!</a>
+    </p>
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}
