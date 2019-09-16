@@ -19,6 +19,9 @@ public class App{
     public static void main(String[] args) {
 static int getHerokuAssignedPort(){
 ProcessBuilder processBuilder = new ProcessBuilder();
+if(processBuilder.environment().get("PORT") != null){
+
+}
         }
         staticFileLocation("/public");
         String connectionString = "jdbc:h2:~/herosquad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
