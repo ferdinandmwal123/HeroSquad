@@ -16,13 +16,15 @@ import static spark.Spark.*;
 
 
 public class App{
-    public static void main(String[] args) {
-static int getHerokuAssignedPort(){
-ProcessBuilder processBuilder = new ProcessBuilder();
-if(processBuilder.environment().get("PORT") != null){
-
-}
+    static int getHerokuAssignedPort(){
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if(processBuilder.environment().get("PORT") != null){
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
+
+    }
+    public static void main(String[] args) {
+
         staticFileLocation("/public");
         String connectionString = "jdbc:h2:~/herosquad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
