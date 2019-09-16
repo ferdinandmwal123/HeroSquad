@@ -24,7 +24,7 @@ public class App{
     return 4567;
     }
     public static void main(String[] args) {
-
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
         String connectionString = "jdbc:h2:~/herosquad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
