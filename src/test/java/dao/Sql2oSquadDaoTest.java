@@ -34,21 +34,7 @@ public class Sql2oSquadDaoTest {
     }
 
 
-    @Test
-    public void getAllHeroesBySquadReturnsHeroesCorrectly() throws Exception {
-        Squad squad = setUpSquad();
-        squadDao.add(squad);
-        int squadId = squad.getId();
-        Hero newHero = new Hero("jack", 4, "strong", "water", squadId);
-        Hero otherHero = new Hero("jill", 12, "swim", "fire", squadId);
-        Hero thirdHero = new Hero("john", 13, "fly", "air", squadId);
-        heroDao.add(newHero);
-        heroDao.add(otherHero);
-        assertEquals(2, squadDao.getAllHeroesBySquad(squadId));
-        assertTrue(squadDao.getAllHeroesBySquad(squadId).contains(newHero));
-        assertTrue(squadDao.getAllHeroesBySquad(squadId).contains(otherHero));
-        assertFalse(squadDao.getAllHeroesBySquad(squadId).contains(thirdHero)); //things are accurate!
-    }
+
 
 
     public Squad setUpSquad() {

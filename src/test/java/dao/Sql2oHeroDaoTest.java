@@ -37,13 +37,7 @@ public class Sql2oHeroDaoTest{
         assertNotEquals(originalHeroId,hero.getId());
     }
 
-    @Test
-    public void existingHeroCanBeFoundById() throws Exception {
-        Hero hero = setUpHero();
-        heroDao.add(hero);
-        Hero foundHero = heroDao.findById(hero.getId());
-        assertEquals(hero,foundHero);
-    }
+
 
     @Test
     public void squadIdIsReturned() throws Exception {
