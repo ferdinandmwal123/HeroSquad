@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="dao.Sql2oHeroDaoTest" time="0.228" errors="6" skipped="0">
+<testsuite tests="6" failures="0" name="dao.Sql2oHeroDaoTest" time="0.246" errors="6" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+11-post-Ubuntu-1ubuntu218.04.3"/>
@@ -61,7 +61,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="dao.Sql2oHeroDaoTest" name="addingHeroSetsId" time="0.111">
+  <testcase classname="dao.Sql2oHeroDaoTest" name="addingHeroSetsId" time="0.118">
     <error message="Could not acquire a connection from DataSource - No suitable driver found for jdbc:h2:mem:testing;INIT=RUNSCRIPT from &apos;classpath:db/create.sql&apos;" type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Could not acquire a connection from DataSource - No suitable driver found for jdbc:h2:mem:testing;INIT=RUNSCRIPT from &apos;classpath:db/create.sql&apos;
 	at org.sql2o.Connection.createConnection(Connection.java:291)
 	at org.sql2o.Connection.&lt;init&gt;(Connection.java:51)
@@ -105,7 +105,7 @@ Caused by: java.sql.SQLException: No suitable driver found for jdbc:h2:mem:testi
 	... 33 more
 </error>
   </testcase>
-  <testcase classname="dao.Sql2oHeroDaoTest" name="addingHeroSetsId" time="0.111">
+  <testcase classname="dao.Sql2oHeroDaoTest" name="addingHeroSetsId" time="0.118">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at dao.Sql2oHeroDaoTest.tearDown(Sql2oHeroDaoTest.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -217,7 +217,7 @@ Caused by: java.sql.SQLException: No suitable driver found for jdbc:h2:mem:testi
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
   </testcase>
-  <testcase classname="dao.Sql2oHeroDaoTest" name="updateChangesHeroesDetails" time="0.001">
+  <testcase classname="dao.Sql2oHeroDaoTest" name="updateChangesHeroesDetails" time="0.003">
     <error message="Could not acquire a connection from DataSource - No suitable driver found for jdbc:h2:mem:testing;INIT=RUNSCRIPT from &apos;classpath:db/create.sql&apos;" type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Could not acquire a connection from DataSource - No suitable driver found for jdbc:h2:mem:testing;INIT=RUNSCRIPT from &apos;classpath:db/create.sql&apos;
 	at org.sql2o.Connection.createConnection(Connection.java:291)
 	at org.sql2o.Connection.&lt;init&gt;(Connection.java:51)
@@ -261,7 +261,7 @@ Caused by: java.sql.SQLException: No suitable driver found for jdbc:h2:mem:testi
 	... 33 more
 </error>
   </testcase>
-  <testcase classname="dao.Sql2oHeroDaoTest" name="updateChangesHeroesDetails" time="0.002">
+  <testcase classname="dao.Sql2oHeroDaoTest" name="updateChangesHeroesDetails" time="0.004">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at dao.Sql2oHeroDaoTest.tearDown(Sql2oHeroDaoTest.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
