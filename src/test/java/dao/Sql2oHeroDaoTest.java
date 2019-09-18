@@ -10,7 +10,7 @@ import org.sql2o.Sql2o;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-public class Sql2oHeroDaoTest{
+public class Sql2oHeroDaoTest {
     private Sql2oHeroDao heroDao;
     private Connection conn;
 
@@ -74,4 +74,5 @@ public class Sql2oHeroDaoTest{
         return new Hero("jill",6,"swim","fire",5);
     }
 }
+
 
