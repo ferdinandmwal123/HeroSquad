@@ -22,10 +22,23 @@ public class App{
     return 4567;
     }
     public static void main(String[] args) {
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+
+        // This tells our app that if Heroku sets a port for us, we need to use that port.
+        // Otherwise, if they do not, continue using port 4567.
+
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        port(port);
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
-        String connectionString = "jdbc:postgresql://ec2-107-20-185-16.compute-1.amazonaws.com:5432/ddh2h1s2jknmdr";
-        Sql2o sql2o = new Sql2o(connectionString, "piqqgubzyleqio", "ffc0ffc5aae6ec40329b63175d79c2bfd6f67d097901e723232ae342f06b125a");
+        String connectionString = "jdbc:postgresql://ec2-54-227-245-146.compute-1.amazonaws.com:5432/d5kh01cd79f7u3";
+        Sql2o sql2o = new Sql2o(connectionString, "cjvugmfcxqctyf", "7fcf0c1a251ccdb9d2c903e117ae452ce56cfec6f57141a4d2f93a3274eef5d1");
         Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
         Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
 

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: dao.Sql2oHeroDaoTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.175 sec <<< FAILURE!
-addingHeroSetsId(dao.Sql2oHeroDaoTest)  Time elapsed: 0.118 sec  <<< ERROR!
+Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.261 sec <<< FAILURE!
+addingHeroSetsId(dao.Sql2oHeroDaoTest)  Time elapsed: 0.197 sec  <<< ERROR!
 org.sql2o.Sql2oException: Could not acquire a connection from DataSource - No suitable driver found for jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'
 	at org.sql2o.Connection.createConnection(Connection.java:291)
 	at org.sql2o.Connection.<init>(Connection.java:51)
@@ -45,7 +45,7 @@ Caused by: java.sql.SQLException: No suitable driver found for jdbc:h2:mem:testi
 	at org.sql2o.Connection.createConnection(Connection.java:288)
 	... 33 more
 
-addingHeroSetsId(dao.Sql2oHeroDaoTest)  Time elapsed: 0.119 sec  <<< ERROR!
+addingHeroSetsId(dao.Sql2oHeroDaoTest)  Time elapsed: 0.198 sec  <<< ERROR!
 java.lang.NullPointerException
 	at dao.Sql2oHeroDaoTest.tearDown(Sql2oHeroDaoTest.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -78,7 +78,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-squadIdIsReturned(dao.Sql2oHeroDaoTest)  Time elapsed: 0.001 sec  <<< ERROR!
+squadIdIsReturned(dao.Sql2oHeroDaoTest)  Time elapsed: 0 sec  <<< ERROR!
 org.sql2o.Sql2oException: Could not acquire a connection from DataSource - No suitable driver found for jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'
 	at org.sql2o.Connection.createConnection(Connection.java:291)
 	at org.sql2o.Connection.<init>(Connection.java:51)
@@ -121,7 +121,7 @@ Caused by: java.sql.SQLException: No suitable driver found for jdbc:h2:mem:testi
 	at org.sql2o.Connection.createConnection(Connection.java:288)
 	... 33 more
 
-squadIdIsReturned(dao.Sql2oHeroDaoTest)  Time elapsed: 0.002 sec  <<< ERROR!
+squadIdIsReturned(dao.Sql2oHeroDaoTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException
 	at dao.Sql2oHeroDaoTest.tearDown(Sql2oHeroDaoTest.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
