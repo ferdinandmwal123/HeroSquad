@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-group 'com.moringa.final-hero'
+group 'com.moringa.HeroSquad-master'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
