@@ -6,10 +6,9 @@ import models.Squad;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
+
 import static spark.Spark.*;
 
 
@@ -68,7 +67,6 @@ public class App{
          Map<String, Object> model = new HashMap<>();
         String squad_name = request.queryParams("squad_name");
         int squad_size = Integer.parseInt(request.queryParams("squad_size"));
-
         String squad_cause = request.queryParams("squad_cause");
         Squad newSquad = new Squad(squad_name,squad_size,squad_cause);
         squadDao.add(newSquad);
@@ -152,6 +150,11 @@ public class App{
             Map<String,Object> model = new HashMap<>();
             List<Squad> allSquads = squadDao.getAll();
             model.put("squads",allSquads);
+            ArrayList<Hero> heroes = request.session().attribute("heroes");
+            if (heroes == null){
+                heroes = new ArrayList<Hero>();
+                request.session().attribute("heroes");
+            }
             String hero_name = request.queryParams("hero_name");
             int hero_age = Integer.parseInt(request.queryParams("hero_age"));
             String hero_power = request.queryParams("hero_power");

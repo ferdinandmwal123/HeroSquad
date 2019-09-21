@@ -10,7 +10,8 @@ public class Squad{
     private String squad_name;
     private int squad_size;
     private String squad_cause;
-
+    private static ArrayList<Squad> instances = new ArrayList<Squad>();//new
+    private List<Hero> heroes = new ArrayList<Hero>();//new
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -34,6 +35,27 @@ public class Squad{
     }
 
 
+    public static ArrayList<Squad> getInstances() {
+        return instances;
+    }
+
+    public static void setInstances(ArrayList<Squad> instances) {
+        Squad.instances = instances;
+    }
+
+    public List<Hero> getHeroes() {
+        return heroes;
+    }
+
+    public void addHero(Hero hero){//new
+        if (heroes.size()< this.getSquad_size()){
+            heroes.add(hero);
+        }
+    }
+
+    public void setHeroes(List<Hero> heroes) {
+        this.heroes = heroes;
+    }
 
     public int getId() {
         return id;
