@@ -91,7 +91,7 @@ public void addingSquadSetsId() throws  Exception{
         Hero newHero = new Hero("were",4,"fly","gte",squad.getId());
         heroDao.add(hero);
         heroDao.add(newHero);
-        List<Hero> heroes = new ArrayList<>();
+        ArrayList<Object> heroes= new ArrayList<>();
         heroes.add(hero);
         heroes.add(newHero);
         assertEquals(2,squadDao.getAllHeroesBySquad(squad.getId()).size());
