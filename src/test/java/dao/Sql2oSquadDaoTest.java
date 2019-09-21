@@ -73,7 +73,7 @@ public void addingSquadSetsId() throws  Exception{
     }
 
     @Test
-    pu
+    public void clear
 
 
     public Squad setUpSquad() {
