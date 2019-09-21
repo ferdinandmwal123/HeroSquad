@@ -68,6 +68,7 @@ public class App{
          Map<String, Object> model = new HashMap<>();
         String squad_name = request.queryParams("squad_name");
         int squad_size = Integer.parseInt(request.queryParams("squad_size"));
+
         String squad_cause = request.queryParams("squad_cause");
         Squad newSquad = new Squad(squad_name,squad_size,squad_cause);
         squadDao.add(newSquad);
