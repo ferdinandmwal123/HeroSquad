@@ -27,7 +27,7 @@ then:
 
 # setup/Installation Requirements for developers
 Fork this repository into your account
-Clone the app using the clone link provided https://github.com/turi-byte/Caesar.git
+Clone the app using the clone link provided https://github.com/ferdinandmwal123/HeroSquad
 Open your terminal and it should be in your local repository
 Open your favorite text editor
 
@@ -45,7 +45,7 @@ Spark framework
 # License
 MIT License
 
-Copyright (c) 2019 Breldan Muturi
+Copyright (c) 2019 Ferdinand Mwalagho
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
