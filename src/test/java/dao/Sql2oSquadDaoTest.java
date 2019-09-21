@@ -73,7 +73,25 @@ public void addingSquadSetsId() throws  Exception{
     }
 
     @Test
-    public void clear
+    public void clearAllSquadsRemovesAllSquads() throws Exception{
+        Squad squad = setUpSquad();
+        squadDao.add(squad);
+        squadDao.clearAllSquads();
+        assertEquals(0,squadDao.getAll().size());
+    }
+
+    @Test
+    public void getAllHeroesBySquadReturnsHeroes() throws Exception{
+        Squad squad = setUpSquad();
+        squadDao.add(squad);
+        Hero hero = new Hero("squid",2,"strong","sew",squad.getId());
+        Hero newHero = new Hero("were",4,"fly","gte",squad.getId());
+        heroDao.add(hero);
+        heroDao.add(newHero);
+        assertEquals(2,squadDao.getAllHeroesBySquad(squad.getId()));
+        assertTrue(squadDao.getAllHeroesBySquad(squad.getId()).contains(hero));
+        assertTrue(squadDao.getAllHeroesBySquad(squad.getId()).contains(newHero));
+    }
 
 
     public Squad setUpSquad() {
