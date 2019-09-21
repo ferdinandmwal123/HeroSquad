@@ -9,6 +9,9 @@ import org.junit.Test;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class Sql2oSquadDaoTest {
@@ -88,9 +91,14 @@ public void addingSquadSetsId() throws  Exception{
         Hero newHero = new Hero("were",4,"fly","gte",squad.getId());
         heroDao.add(hero);
         heroDao.add(newHero);
-        assertEquals(2,squadDao.getAllHeroesBySquad(squad.getId()));
-        assertTrue(squadDao.getAllHeroesBySquad(squad.getId()).contains(hero));
-        assertTrue(squadDao.getAllHeroesBySquad(squad.getId()).contains(newHero));
+        List<Hero> heroes = new ArrayList<>();
+        heroes.add(hero);
+        heroes.add(newHero);
+        assertEquals(2,squadDao.getAllHeroesBySquad(squad.getId()).size());
+//        assertTrue(squadDao.getAllHeroesBySquad(squad.getId()).contains(hero));
+//        assertTrue(squadDao.getAllHeroesBySquad(squad.getId()).contains(newHero));
+        assertEquals(heroes ,squadDao.getAllHeroesBySquad(squad.getId()));
+//        assertEquals(newHero,squadDao.getAllHeroesBySquad(squad.getId()));
     }
 
 
