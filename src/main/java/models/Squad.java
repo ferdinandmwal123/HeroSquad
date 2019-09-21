@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Squad{
@@ -8,7 +10,6 @@ public class Squad{
     private String squad_name;
     private int squad_size;
     private String squad_cause;
-
 
     @Override
     public boolean equals(Object o) {
@@ -31,6 +32,8 @@ public class Squad{
         this.squad_size = squad_size;
         this.squad_cause = squad_cause;
     }
+
+
 
     public int getId() {
         return id;
