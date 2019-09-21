@@ -8,9 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+
+import static org.junit.Assert.*;
 
 public class Sql2oSquadDaoTest {
 
@@ -34,7 +33,47 @@ public class Sql2oSquadDaoTest {
     }
 
 
+@Test
+public void addingSquadSetsId() throws  Exception{
+        Squad squad = setUpSquad();
+        int firstId = squad.getId();
+        squadDao.add(squad);
+        assertNotEquals(firstId,squad.getId());
+}
 
+    @Test
+    public void getAllReturnsAllSquads() throws  Exception{
+       Squad squad = setUpSquad();
+       squadDao.add(squad);
+       assertEquals(1,squadDao.getAll().size());
+    }
+
+    @Test
+    public void existingSquadsCanBeFoundById() throws  Exception {
+        Squad squad = setUpSquad();
+        squadDao.add(squad);
+        Squad foundSquad = squadDao.findById(squad.getId());
+        assertEquals(squad,foundSquad);
+    }
+    @Test
+    public void updateChangesSquadDetails(){
+        Squad squad = setUpSquad();
+        squadDao.add(squad);
+        squadDao.update(squad.getId(),"Jill",8,"Fun");
+        Squad newSquad = squadDao.findById(squad.getId());
+        assertNotEquals(squad,newSquad);
+    }
+
+    @Test
+    public void deletByIdDeletesRightSquad() throws  Exception{
+        Squad squad = setUpSquad();
+        squadDao.add(squad);
+        squadDao.deleteById(squad.getId());
+        assertEquals(0,squadDao.getAll().size());
+    }
+
+    @Test
+    pu
 
 
     public Squad setUpSquad() {
