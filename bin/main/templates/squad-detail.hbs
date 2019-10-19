@@ -1,0 +1,20 @@
+{{#partial "content"}}
+    <div class="container">
+    <h1>{{squad.squad_name}} Squad!</h1>
+    <p>All heroes in squad</p>
+    <ul class="list-group">
+        {{#if heroes}}
+        {{#each heroes}}
+                <p class="herodetail list-group-item"> Your hero name : {{ hero_name}}<span class="badge">{{id}}</span></p>
+                <p class="herodetail list-group-item">Your hero power : {{ hero_power}}<span class="badge"></span>{{id}} 💪💪💪💪💪</p>
+                <p class="herodetail list-group-item">Weakness : {{ hero_weakness}} 😓😓😓😓<span class="badge"></span>{{id}}</p>
+
+        {{/each}}
+        {{/if}}
+
+    </ul>
+    <a href="/squads/{{squad.id}}/edit">Edit this category</a><br>
+    <a href="/squads/{{squad.id}}/delete">DELETE this category</a>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

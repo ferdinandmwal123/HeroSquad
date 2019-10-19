@@ -1,31 +1,75 @@
 {{#partial "content"}}
     {{#if editSquad}}
-        <h1>Edit this squad</h1>
-        <form action="/squads/{{squad.id}}" method="post">
-            <div class="form-group">
-            <label for="squad_name">Edit this squads name</label>
-            <input id="new_squad_name" name="new_squad_name" type="text" class="form-control" >
-            <label for="squad_size"> Edit Size</label>
-            <input id="new_squad_size" name="new_squad_size" type="number" class="form-control" >
-            <label for="squad_cause">Edit this squads size</label>
-            <input id="new_squad_cause" name="new_squad_cause" type="text" class="form-control">
-            <button type="submit" class="btn btn-default">Go!</button>
+        <div class="contact1">
+            <div class="container-contact1">
+                <div class="contact1-pic js-tilt" data-tilt>
+                    <img src="/images/squad.png" alt="IMG">
+                </div>
+                <form class="contact1-form validate-form" action="/squads/{{squad.id}}" method="post">
+
+                <span class="contact1-form-title">
+                    Edit squad
+                </span>
+                    <div class="wrap-input1 validate-input">
+                        <input class="input1" type="text" name="squad_name" id="squad_name" placeholder="Edit the squads name" >
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        <input class="input1" type="number" name="squad_size" placeholder="Edit the squads size">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        <input class="input1" type="text" name="squad_cause" id="squad_cause"placeholder="Edit the squads cause">
+                        <span class="shadow-input1"></span>
+                    </div>
+
+                    <div class="container-contact1-form-btn">
+                        <button class="contact1-form-btn">
+                    <span>
+                    Add squad
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
 
         {{else}}
-        <h1>Add a new squad</h1>
-        <form action="/squads" method="post">
-            <div class="form-group">
-                <label for="squad_name">Insert name!</label>
-            <input id="squad_name" name="squad_name" class="form-control" type="text" value="{{id}}">
-            <label for="squad_size">Insert Size</label>
-            <input id="squad_size" name="squad_size" type="number" class="form-control" >
-            <label for="squad_cause">Insert this squads cause</label>
-            <input id="squad_cause" name="squad_cause" type="text" class="form-control">
-            <button type="submit" class="btn btn-default">Go!</button>
+        <div class="contact1">
+            <div class="container-contact1">
+                <div class="contact1-pic js-tilt" data-tilt>
+                    <img src="/images/squad.png" alt="IMG">
+                </div>
+                <form class="contact1-form validate-form" action="/squads" method="post">
+
+                <span class="contact1-form-title">
+                    Add a squad
+                </span>
+                    <div class="wrap-input1 validate-input">
+                        <input class="input1" type="text" name="squad_name" id="squad_name" placeholder="Add the squads name" value="{{id}}">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        <input class="input1" type="number" name="squad_size" placeholder="Add the squads size">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" >
+                        <input class="input1" type="text" name="squad_cause" id="squad_cause"placeholder="Add the squads cause">
+                        <span class="shadow-input1"></span>
+                    </div>
+
+                    <div class="container-contact1-form-btn">
+                        <button class="contact1-form-btn">
+                    <span>
+                    Add squad
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     {{/if}}
 {{/partial}}
 

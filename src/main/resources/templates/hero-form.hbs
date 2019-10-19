@@ -1,57 +1,98 @@
+
 {{#partial "content"}}
     {{#if editHero}}
-        <h1>Edit hero</h1>
-        <form action="/heroes/{{hero.id}}" method="post">
-            <div class="form-group">
-            <label for="hero_name">Edit name</label>
-            <input id="hero_name" name="hero_name" type="text" class="form-control">
+        <div class="contact1">
+            <div class="container-contact1">
+                <div class="contact1-pic js-tilt" data-tilt>
+                    <img src="/images/hero.jpg" alt="IMG">
+                </div>
+                <form class="contact1-form validate-form" action="/heroes/{{hero.id}}" method="post">
 
-            <label for="hero_age">Edit Age</label>
-            <input id="hero_age" name="hero_age" type="number" class="form-control">
-            <label for="hero_power">Edit Power</label>
-            <input id="hero_power" name="hero_power" type="text" class="form-control" >
-
-            <label for="hero_weakness">Edit Weakness</label>
-            <input id="hero_weakness" name="hero_weakness" type="text" class="form-control">
-            <label for="squad_id">Place him in a squad</label>
-            <select id="squad_id" name="squad_id" class="form-control">
-                {{#each squads}}
-                    <option value="{{squad_id}}">{{squad_name}}</option>
-                {{/each}}
-            </select>
-            <p><a href="/squads/new">Add one</a></p>
-            <button type="submit">Go!</button>
+                <span class="contact1-form-title">
+                    Add a hero
+                </span>
+                    <div class="wrap-input1 validate-input" data-validate="Name is required">
+                        <input class="input1" type="text" name="hero_name" id="hero_name" placeholder="Add the heroes name">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input1" type="number" name="hero_age" placeholder="Add the heros age">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" data-validate="Subject is required">
+                        <input class="input1" type="text" name="hero_power" id="hero_power "placeholder="Add the heroes power">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" data-validate="Message is required">
+                        <input class="input1" id="hero_weakness" name="hero_weakness" placeholder="Add the heroes weakness">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    {{#if squads}}
+                        <label for="squad_id">Place him in a squad</label>
+                        <select id="id" name="id" class="input1">
+                            {{#each squads}}
+                                <option value={{squad_id}}> {{squad_name}}</option>
+                            {{/each}}
+                        </select>
+                    {{/if}}
+                    <div class="container-contact1-form-btn">
+                        <button class="contact1-form-btn">
+                    <span>
+                    Add hero
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     {{else}}
-        <h2>Add a new hero</h2>
-        <form action="/heroes" method="post">
-            <div class="form-group">
-                <label for="hero_name">Add name</label>
-                <input id="hero_name" name="hero_name" type="text" class="form-control">
+        <div class="contact1">
+            <div class="container-contact1">
+                <div class="contact1-pic js-tilt" data-tilt>
+                    <img src="/images/hero.jpg" alt="IMG">
+                </div>
+                <form class="contact1-form validate-form" action="/heroes" method="post">
 
-                <label for="hero_age">Add Age</label>
-                <input id="hero_age" name="hero_age" type="number" class="form-control">
-
-                <label for="hero_power">Add Power</label>
-                <input id="hero_power" name="hero_power" type="text" class="form-control">
-
-                <label for="hero_weakness">Add Weakness</label>
-                <input id="hero_weakness" name="hero_weakness" type="text" class="form-control">
-
-            {{#if squads}}
-                <label for="squad_id">Place him in a squad</label>
-                <select id="id" name="id" class="form-control">
-                    {{#each squads}}
-                        <option value={{id}}> {{squad_name}}</option>
-                    {{/each}}
-                </select>
-              {{/if}}
-                <P><a href="/squads/new">Add squad</a></P>
-
-            <button type="submit">Go!</button>
+                <span class="contact1-form-title">
+                    Add a hero
+                </span>
+                    <div class="wrap-input1 validate-input" data-validate="Name is required">
+                        <input class="input1" type="text" name="hero_name" id="hero_name" placeholder="Add the heroes name">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input1" type="number" name="hero_age" placeholder="Add the heros age">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" data-validate="Subject is required">
+                        <input class="input1" type="text" name="hero_power" id="hero_power "placeholder="Add the heroes power">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    <div class="wrap-input1 validate-input" data-validate="Message is required">
+                        <input class="input1" id="hero_weakness" name="hero_weakness" placeholder="Add the heroes weakness">
+                        <span class="shadow-input1"></span>
+                    </div>
+                    {{#if squads}}
+                        <label for="squad_id">Place him in a squad</label>
+                        <select id="id" name="id" class="input1">
+                            {{#each squads}}
+                                <option value={{id}}> {{squad_name}}</option>
+                            {{/each}}
+                        </select>
+                    {{/if}}
+                    <div class="container-contact1-form-btn">
+                        <button class="contact1-form-btn">
+                    <span>
+                    Add hero
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </span>
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
+
     {{/if}}
 {{/partial}}
 {{>layout.hbs}}

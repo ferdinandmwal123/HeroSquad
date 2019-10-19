@@ -1,65 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{#block "title"}}Heroes :) {{/block}}</title>
+    <title >{{#block "title"}} Hero Squad {{/block}}</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <body>
-<ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="/">HOME :)</a></li>
-    <li role="presentation"><a href="/heroes/new">New Hero :)</a></li>
-
-</ul>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/app.css">
 </head>
+<body bgcolor=" #ffcc00">
 
-<div class="container">
-    <!--begin main template-->
-    <div class="page-header">
-        <img src="/images/img.jpg" width="70%" alt="https://terrigen-cdn-dev.marvel.com/content/prod/1x/marvelfuturefight_lob_crd_03.jpg">
-        <h1>You Are A Hero!.<small><a href="/squads/new">Add a squad first!</a></small> </h1>
-        <p class="relax"></p>
+    <nav class="navx navbar navbar-inverse navbar-expand">
+            <ul>
+                <a class="navbar-brand"><img src="/images/logo.jpg" height="40" width="40"></a>
+                <li><a href="/">Home</a></li>
+                <li><a href="/heroes/new">Create a hero</a></li>
+                <li><a href="/squads/new">Create a squad</a></li>
+            </ul>
+    </nav>
 
-        <div class="col-md-12">
+    <div class="container">
+        <div class="bg-image">
             {{#block "content"}}
             {{/block}}
         </div>
     </div>
-</div>
-
-<h3> Squads!</h3>
-<div class="row">
-    {{#if squads}}
-        {{#each squads}}
-            <div class="card col-sm-6">
-                <img src="/images/card.jpeg" class="card-img-top">
-                <div class="card-body">
-                    <a class="card-text styledtext"  href="/squads/{{id}}" value="{{id}}">  {{squad_name}}</a>
-                </div>
-            </div>
-        {{/each}}
-        <br>
-
-    {{else}}
-        <li ><a href="/squads/new"> ADd a squad First!</a></li>
-    {{/if}}
-
-</div>
 
 
 
-
-<!--end main template-->
-{{#block "footer"}}
-    <footer class="footer">
-        <div class="container">
-            <hr>
-            <p class="text-muted">
-                <a href="/squads/delete">delete all :(</a><br>
-                <a href="/squads/delete">delete all tasks :(</a>
-            </p>
-        </div>
-    </footer>
-    </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    </html>
-{{/block}}
+</body>
+</html>

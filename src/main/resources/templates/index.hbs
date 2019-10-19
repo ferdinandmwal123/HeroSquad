@@ -1,18 +1,25 @@
 {{#partial "content"}}
-    <h1>Good</h1>
-    {{#if heroes}}
-        {{#each heroes }}
-            <div class="list-group">
-                <p><a href="/squads/{{squad_id}}/heroes/{{id}}" class="list-group-item list-group-item-action active">{{hero_name}} <span class="badge">Enter to view herro :)</span></a></p>
-                <p class="list-group-item list-group-item-action">{{hero_name}}</p>
-                <p class="list-group-item list-group-item-action">{{hero_name}}</p>
-
+<div class="squad-image squads-container">
+    {{#if squads}}
+        {{#each squads}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="squad-image"> <img src="/images/card.jpeg" class="card-img-top"></div>
+                    <h5 class="card-title">{{squad_name}}</h5>
+                    <p class="card-text">{{squad_cause}}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
             </div>
-
 
         {{/each}}
     {{else}}
         <p>No tasks!</p>
     {{/if}}
+</div>
+<div class="footer">
+    <div class="container">
+        <button class="btn btn-danger footerButton"><a class="footerButtonText" href="/squads/delete">Delete everything !</a><br></button>
+    </div>
+</div>
 {{/partial}}
 {{>layout.hbs}}
